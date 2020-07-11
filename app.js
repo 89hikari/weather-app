@@ -16,12 +16,20 @@ window.addEventListener('load', () => {
                 return response.json();
             }).then(data => {
                 console.log(data);
-                tempDegree.textContent = (data.main.temp - 273,15).toFixed(1);
+                tempDegree.textContent = (data.main.temp - 273, 15).toFixed(1);
                 tempDescription.textContent = data.weather[0].description;
+                location.textContent = data.name;
+                setIcons(data.weather[0].main, document.querySelector('.icon'));
             });
         });
     } else {
         h1.textContent = "To start this application you need enable GPS location in your browser. Please google how."
     }
 
+    function setIcons(icon, iconID) {
+        const skycons = new Skycons({ color: "white" });
+        const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+        skycons.play();
+        return skycons.set(iconID, Skycons[currentIcon]);
+    }
 });
