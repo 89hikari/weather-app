@@ -552,6 +552,15 @@
     cloud(ctx, t, w * 0.375, h * 0.625, s * 0.75, s * STROKE, color);
   };
 
+  Skycons.BROKEN_CLOUDS = function(ctx, t, color) {
+    var w = ctx.canvas.width,
+        h = ctx.canvas.height,
+        s = Math.min(w, h);
+
+    sun(ctx, t, w * 0.625, h * 0.375, s * 0.75, s * STROKE, color);
+    cloud(ctx, t, w * 0.375, h * 0.625, s * 0.75, s * STROKE, color);
+  };
+
   Skycons.PARTLY_CLOUDY_NIGHT = function(ctx, t, color) {
     var w = ctx.canvas.width,
         h = ctx.canvas.height,
@@ -561,7 +570,7 @@
     cloud(ctx, t, w * 0.375, h * 0.625, s * 0.75, s * STROKE, color);
   };
 
-  Skycons.CLOUDY = function(ctx, t, color) {
+  Skycons.CLOUDS = function(ctx, t, color) {
     var w = ctx.canvas.width,
         h = ctx.canvas.height,
         s = Math.min(w, h);

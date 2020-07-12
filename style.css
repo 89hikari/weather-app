@@ -31,6 +31,7 @@ body {
     display: flex;
     align-items: center;
     cursor: pointer;
+    transition: 2s;
 }
 
 .degree-section span {
